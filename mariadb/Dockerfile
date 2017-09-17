@@ -1,4 +1,4 @@
-FROM mariadb:10.0.32
+FROM mariadb:10.0.30
 
 RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list \
     && apt-get update \
