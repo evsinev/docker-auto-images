@@ -1,0 +1,2 @@
+call paynet.server_init();
+call paynet_sandbox.server_init();
