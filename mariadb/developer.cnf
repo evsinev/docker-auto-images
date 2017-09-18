@@ -1,7 +1,5 @@
 [mysqld]
 
-init-file         = /init.txt
-
 back_log = 50
 
 max_connections = 400
