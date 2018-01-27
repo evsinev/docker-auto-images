@@ -1,4 +1,4 @@
-FROM payneteasy:jdk-8
+FROM payneteasy/jdk-8
 
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 
