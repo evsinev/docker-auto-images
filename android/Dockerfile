@@ -12,10 +12,10 @@ RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list
 RUN apt-get --quiet update --yes
 RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
 RUN apt-get -qq -t sid install -y gettext
-RUN wget --output-document=sdk-tools-linux.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
+RUN wget  --quiet --output-document=sdk-tools-linux.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
 RUN cd /opt
 RUN unzip -q sdk-tools-linux.zip -d android-sdk-linux
-RUN echo y; echo y; echo y; echo y; echo y; echo y; | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+RUN echo y; echo y; echo y; echo y; echo y; echo y | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 
 RUN $ANDROID_HOME/tools/bin/sdkmanager --verbose \
     "platform-tools" \
