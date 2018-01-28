@@ -1,8 +1,8 @@
 FROM openjdk:8-jdk
 
 ENV \
-  ANDROID_COMPILE_SDK="25" \
-  ANDROID_BUILD_TOOLS="25.0.2" \
+  ANDROID_COMPILE_SDK="26" \
+  ANDROID_BUILD_TOOLS="26.0.2" \
   ANDROID_SDK_TOOLS="3859397" \
   ANDROID_HOME="/opt/android-sdk-linux" \
   PATH="$PATH:$ANDROID_HOME/platform-tools"
