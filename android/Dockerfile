@@ -10,12 +10,10 @@ ENV \
 RUN env
 RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list
 RUN apt-get --quiet update --yes
-RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
-RUN apt-get -qq -t sid install -y gettext
-RUN wget  --quiet --output-document=sdk-tools-linux.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
-RUN cd /opt
-RUN unzip -q sdk-tools-linux.zip -d android-sdk-linux
-RUN echo y; echo y; echo y; echo y; echo y; echo y | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+RUN apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1 gettext
+RUN wget --quiet --output-document=sdk-tools-linux.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip
+RUN unzip -q /sdk-tools-linux.zip -d /opt/android-sdk-linux
+RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 
 RUN $ANDROID_HOME/tools/bin/sdkmanager --verbose \
     "platform-tools" \
@@ -24,3 +22,5 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager --verbose \
     "extras;android;m2repository" \
     "extras;google;google_play_services" \
     "extras;google;m2repository"
+
+RUN rm /sdk-tools-linux.zip
