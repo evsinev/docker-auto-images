@@ -1,5 +1,4 @@
 FROM payneteasy/jdk-8
 
-RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get -qq -t sid install -y nodejs npm grunt python-nwdiag
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get install -y nodejs npm grunt
