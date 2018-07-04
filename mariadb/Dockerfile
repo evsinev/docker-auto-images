@@ -9,3 +9,7 @@ COPY redir.sh /docker-entrypoint-initdb.d/redir.sh
 COPY developer.cnf /etc/mysql/conf.d/developer.cnf
 COPY fetch-my-cnf.sh /docker-entrypoint-initdb.d/fetch-my-cnf.sh
 
+RUN chown mysql /etc/mysql/conf.d/developer.cnf \
+    chown mysql /etc/mysql/my.cnf
+
+
