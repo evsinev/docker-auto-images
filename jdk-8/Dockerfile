@@ -1,4 +1,4 @@
-FROM maven:3.5-jdk-8
+FROM maven:3.6-jdk-8
 
 RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list \
     && apt-get update \
