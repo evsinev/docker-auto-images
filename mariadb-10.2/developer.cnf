@@ -1,5 +1,8 @@
 [mysqld]
 
+# please enable dns name resolution
+#skip-name-resolve
+
 back_log = 50
 
 max_connections = 400
