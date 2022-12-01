@@ -10,7 +10,8 @@ COPY fetch-my-cnf.sh  /docker-entrypoint-initdb.d/fetch-my-cnf.sh
 COPY redir-service.sh /service/redir/run
 COPY redir.sh         /docker-entrypoint-initdb.d/redir.sh
 
-COPy network-proxy-server /usr/bin/network-proxy-server
+COPY network-proxy-server /usr/bin/network-proxy-server
+RUN chmod a+x /usr/bin/network-proxy-server
 
 RUN    chown mysql /etc/mysql/conf.d/developer.cnf \
     && chown mysql /etc/mysql/my.cnf \
