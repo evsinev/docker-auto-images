@@ -51,18 +51,19 @@ innodb_support_xa = 0
 sync-binlog=0
 # only for 10.0.30
 # innodb_additional_mem_pool_size = 16M
-innodb_buffer_pool_size = 512M
+innodb_buffer_pool_size = 16G
 innodb_data_file_path=innodb1:100M:autoextend
-innodb_write_io_threads = 8
-innodb_read_io_threads = 8
+innodb_write_io_threads = 32
+innodb_read_io_threads = 32
 innodb_thread_concurrency = 12
-innodb_flush_log_at_trx_commit = 2
-innodb_log_buffer_size = 4M
-innodb_log_file_size = 64M
+innodb_flush_log_at_trx_commit = 0
+innodb_log_buffer_size = 256M
+innodb_log_file_size = 2G
 innodb_log_files_in_group = 2
 innodb_max_dirty_pages_pct = 90
 innodb_flush_method=O_DIRECT
 innodb_lock_wait_timeout = 120
+innodb_doublewrite = 0
 
 # Force database to store utf characters
 character-set-filesystem=binary
