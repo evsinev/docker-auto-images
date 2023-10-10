@@ -9,5 +9,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT []
+CMD []
+
+env MAVEN_CONFIG=
 
 ENV GIT_SSH "/usr/bin/ssh"
