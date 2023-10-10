@@ -6,6 +6,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list \
     && apt-get update \
     && apt-get -y upgrade \
-    && apt-get -qq -t sid install -y gettext openssh-client mysql-client redir git xsltproc rsync
+    && apt-get -qq -t sid install -y gettext openssh-client wget curl redir git xsltproc rsync gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT []
 
 ENV GIT_SSH "/usr/bin/ssh"
