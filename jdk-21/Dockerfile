@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
     && apt-get -y upgrade \
-    && apt-get -qq install -y gettext openssh-client wget curl redir git xsltproc rsync gnupg lsb-release default-mysql-client \
+    && apt-get -qq install -y gettext openssh-client wget curl redir git xsltproc rsync gnupg lsb-release default-mysql-client fontconfig libfreetype6 libfontconfig1 \
     && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT []
