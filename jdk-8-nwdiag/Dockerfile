@@ -1,5 +1,8 @@
-FROM payneteasy/jdk-8
+FROM maven:3.9.12-amazoncorretto-21-debian-trixie
 
-RUN echo 'deb http://deb.debian.org/debian sid main' >> /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get -qq -t sid install python-nwdiag
+ENV DEBIAN_FRONTEND=noninteractive
+ENV GIT_SSH "/usr/bin/ssh"
+
+RUN  \
+    apt-get update \
+    && apt-get install -y python3-nwdiag gettext openssh-client default-mysql-client redir git xsltproc rsync
